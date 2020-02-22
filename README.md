@@ -10,7 +10,7 @@ This project was developed as an assignment for INFO 474: Interactive Informatio
 
 ## Assignment Description
 
-Using the gapminder.csvPreview the document data create a scatter plot of fertility (x axis) vs life expectancy (y axis). Include only data from the year 1980.  When a user hovers over a point on the scatter plot, in the tooltip show a line graph of time (x axis) vs population (y axis) for that country associated with the hovered over point.
+Using the gapminder.csv data create a scatter plot of fertility (x axis) vs life expectancy (y axis). Include only data from the year 1980.  When a user hovers over a point on the scatter plot, in the tooltip show a line graph of time (x axis) vs population (y axis) for that country associated with the hovered over point.
 
 Tableau uses a complicated algorithm to determine what points get labels. You do not have to match the labels on the Tableau viz. However, you should add a label of the country name for every country that has a population of over 100 million people. Put this label 20px to the right of the center of the point.
 
