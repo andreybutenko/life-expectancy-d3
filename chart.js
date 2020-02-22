@@ -167,35 +167,27 @@ function draw(data) {
       .call(d3.axisLeft(y));
   }
 
-  if(firstRender) {
-    scatterGroup.selectAll('.point')
-      .data(data)
-      .enter()
-      .append('circle')
-      .attr('class', 'point')
-      .attr('cx', d => x(d[X_AXIS]))
-      .attr('cy', d => y(d[Y_AXIS]))
-      .attr('r', 5)
-      .style('fill', d => TYPE_COLORS[d[COLOR_DIM]])
-      .style('opacity', d => +d.show)
-      .on('mouseover', () => tooltipLayer.style('display', null))
-      .on('mouseout', () => tooltipLayer.style('display', 'none'))
-      .on('mousemove', d => {
-        tooltipLayer.attr('transform', `translate(${x(d[X_AXIS]) + 20}, ${y(d[Y_AXIS]) + 20})`).raise()
-        tooltipTextName.text(d['Name']);
-        tooltipTextType.text(`Type 1: ${d['Type 1']}`);
-        tooltipTextType2.text(`Type 2: ${d['Type 2']}`);
-      })
-  }
-  else {
-    scatterGroup.selectAll('.point')
-      .data(data)
-      .transition()
-      .duration(1000)
-      .attr('cx', d => x(d[X_AXIS]))
-      .attr('cy', d => y(d[Y_AXIS]))
-      .style('opacity', d => +d.show)
-  }
+  const selection = scatterGroup.selectAll('.point').data(data);
+
+  selection.enter()
+    .append('circle')
+    .attr('class', 'point')
+    .attr('r', 5)
+    .style('fill', d => TYPE_COLORS[d[COLOR_DIM]])
+    .on('mouseover', () => tooltipLayer.style('display', null))
+    .on('mouseout', () => tooltipLayer.style('display', 'none'))
+    .on('mousemove', d => {
+      tooltipLayer.attr('transform', `translate(${x(d[X_AXIS]) + 20}, ${y(d[Y_AXIS]) + 20})`).raise()
+      tooltipTextName.text(d['Name']);
+      tooltipTextType.text(`Type 1: ${d['Type 1']}`);
+      tooltipTextType2.text(`Type 2: ${d['Type 2']}`);
+    })
+    .merge(selection)
+    .transition()
+    .duration(1000)
+    .attr('cx', d => x(d[X_AXIS]))
+    .attr('cy', d => y(d[Y_AXIS]))
+    .style('opacity', d => +d.show)
 
   firstRender = false;
 }
