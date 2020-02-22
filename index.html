@@ -2,54 +2,29 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Pokemon Viz</title>
+    <title>Life Expectancy Viz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <script src="//d3js.org/d3.v4.min.js" charset="utf-8"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Pokemon Data Viz</a>
+      <a class="navbar-brand" href="#">Life Expectancy Data Viz</a>
     </nav>
     <div class="container-fluid">
       <div class="row p-3">
-        <div class="sidebar col-3">
-          <div class="card bg-light">
-            <div class="card-body">
-              <h5 class="card-title">Chart Widgets</h5>
-              <div class="form-group">
-                <label for="pokemon-gen">Pokemon Generation</label>
-                <select id="pokemon-gen" class="custom-select">
-                  <option value="all">(all)</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="pokemon-legend">Legendary</label>
-                <select id="pokemon-legend" class="custom-select">
-                  <option value="all">(all)</option>
-                  <option value="True">Legendary Only (True)</option>
-                  <option value="False">No Legendary (False)</option>
-                </select>
-              </div>
-            </div>
-          </div>
+        <div class="display col-12">
+        </div>
+      </div>
+      <div class="row p-3 justify-content-center">
+        <div class="col-4">
           <div class="card bg-white mt-3">
             <div class="card-body">
               <h5 class="card-title">About</h5>
               <p>This project was developed as an assignment for INFO 474: Interactive Information Visualization at the <a href="https://ischool.uw.edu/" target="_blank">University of Washington Information School.</a></p>
-              <p class="mb-0">By <a href="https://andreybutenko.com" target="_blank">Andrey Butenko</a>, February 2020. <a href="https://github.com/andreybutenko/pokemon-d3" target="_blank">GitHub.</a>
+              <p class="mb-0">By <a href="https://andreybutenko.com" target="_blank">Andrey Butenko</a>, February 2020. <a href="https://github.com/andreybutenko/life-expectancy-d3" target="_blank">GitHub.</a>
             </div>
           </div>
-        </div>
-
-        <div class="display col-9">
         </div>
       </div>
     </div>
